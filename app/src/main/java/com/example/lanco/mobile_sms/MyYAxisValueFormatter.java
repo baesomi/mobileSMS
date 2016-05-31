@@ -21,4 +21,3 @@ public class MyYAxisValueFormatter implements YAxisValueFormatter {
         return mFormat.format(value);
     }
 }
-

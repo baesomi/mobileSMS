@@ -1,17 +1,18 @@
 <resources>
-<string name="app_name">문자를 부탁해</string>
-<string name="action_settings">Settings</string>
-<string name="section_format">Hello World from section: %1$d</string>
-<string name="title_activity_history">HistoryActivity</string>
+    <string name="app_name">문자를 부탁해</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_history">HistoryActivity</string>
+    <string name="facebook_app_id">521573754696657</string>
 
-<style name="SplashTheme" parent="@android:style/Theme.Light.NoTitleBar">
-    <item name="android:windowBackground">@drawable/splash_image</item>
-</style>
+    <style name="SplashTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowBackground">@drawable/splash_image</item>
+    </style>
 
-<string-array name="sort_array">
-    <item>최신순</item>
-    <item>이름순</item>
-    <item>오래된순</item>
-</string-array>
+    <string-array name="sort_array">
+        <item>최신순</item>
+        <item>이름순</item>
+        <item>오래된순</item>
+    </string-array>
 
 </resources>

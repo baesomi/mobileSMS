@@ -11,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.lanco.mobile_sms.DB.DBSingleManager;
 import com.example.lanco.mobile_sms.R;
@@ -41,12 +40,12 @@ public class SMSPopupActivity extends AlertDialog.Builder {
         this.m = m;
         this.c = context;
         dialogView= View.inflate(c, R.layout.activity_smspopup, null);
-         name = (TextView)dialogView.findViewById(R.id.pop_name);
-         phone = (TextView)dialogView.findViewById(R.id.pop_number);
-         report = (TextView)dialogView.findViewById(R.id.pop_report);
-         reserved = (TextView)dialogView.findViewById(R.id.pop_reserved);
-         sort = (TextView)dialogView.findViewById(R.id.pop_sort);
-         message = (TextView)dialogView.findViewById(R.id.pop_message);
+        name = (TextView)dialogView.findViewById(R.id.pop_name);
+        phone = (TextView)dialogView.findViewById(R.id.pop_number);
+        report = (TextView)dialogView.findViewById(R.id.pop_report);
+        reserved = (TextView)dialogView.findViewById(R.id.pop_reserved);
+        sort = (TextView)dialogView.findViewById(R.id.pop_sort);
+        message = (TextView)dialogView.findViewById(R.id.pop_message);
         setView(dialogView);
         buildPopUp();
     }
@@ -102,4 +101,3 @@ public class SMSPopupActivity extends AlertDialog.Builder {
 
 
 }
-

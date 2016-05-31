@@ -2,6 +2,9 @@ package com.example.lanco.mobile_sms.Activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -17,12 +20,22 @@ import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.ImageSpan;
+import android.util.Base64;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TabHost;
+import android.widget.Toast;
 
 import com.example.lanco.mobile_sms.R;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
+import com.github.clans.fab.FloatingActionMenu;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        FacebookSdk.sdkInitialize(getApplicationContext());
+
+        //AppEventsLogger.activateApp(this);
 
         // 가장 상단의 바 - 제목이나, 메뉴를 제공
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -64,13 +80,30 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(mViewPager);
 
         // 플로팅 버튼처리
-        com.github.clans.fab.FloatingActionButton fab = (com.github.clans.fab.FloatingActionButton) findViewById(R.id.menu_item1);
-        fab.setOnClickListener(new View.OnClickListener() {
+        FloatingActionMenu fab = (FloatingActionMenu) findViewById(R.id.menu);
+        com.github.clans.fab.FloatingActionButton fab1 = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.menu_item1);
+        com.github.clans.fab.FloatingActionButton fab2 = (com.github.clans.fab.FloatingActionButton)findViewById(R.id.menu_item2);
+
+        fab.setMenuButtonColorNormalResId(R.color.colorFloat);
+        fab1.setColorNormalResId(R.color.colorFloat);
+        fab2.setColorNormalResId(R.color.colorFloat);
+        fab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, WriteActivity.class));
             }
         });
+        /*try {
+            PackageInfo info = getPackageManager().getPackageInfo("com.example.sample", PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.d("KeyHash", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+            }
+        } catch (PackageManager.NameNotFoundException e) {}
+        catch (NoSuchAlgorithmException e) {
+        }*/
+        //hash key 받아오기
 
     }
 

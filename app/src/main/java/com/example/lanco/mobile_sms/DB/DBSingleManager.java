@@ -96,7 +96,7 @@ public class DBSingleManager {
         return sqldb.insert(tableSingle, null, ini);
     }
 
-   // 특정 전송시간대의 row를 삭제
+    // 특정 전송시간대의 row를 삭제
     public boolean deleteContact(long rowId) {
         return sqldb.delete(tableSingle, KEY_REPORT_DATE + "=" + rowId, null) > 0;
     }
