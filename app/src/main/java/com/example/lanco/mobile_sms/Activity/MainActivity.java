@@ -172,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
         private final int iconRes[] = {
-                R.drawable.home_mini, R.drawable.search_mini, R.drawable.history_two_mini, R.drawable.setting_mini
+                R.drawable.home_mini, R.drawable.send_mini, R.drawable.history_two_mini, R.drawable.setting_mini
         };
 
         public SectionsPagerAdapter(Context context, FragmentManager fm) {
